@@ -17,6 +17,7 @@ AWS Terraform provider documentation: https://registry.terraform.io/providers/ha
 `./main.tf` contains minimal configuration to provision an EC2 instance.
 
 1) `aws configure`
-2) `terraform init`
-3) `terraform plan`
-4) `terraform apply`
+2) `export AWS_PROFILE=terraform-user`
+3) `terraform init`
+4) `terraform plan`
+5) `terraform apply`
