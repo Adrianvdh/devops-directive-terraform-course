@@ -28,3 +28,9 @@ variable "db_pass" {
   type        = string
   sensitive   = true
 }
+
+variable "db_instance_type" {
+  description = "RDS instance type"
+  type        = string
+  default     = "t2.micro"
+}

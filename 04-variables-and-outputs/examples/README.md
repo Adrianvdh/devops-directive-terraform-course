@@ -1,3 +1,6 @@
+# Run
+terraform apply -lock=false
+
 # Variables
 
 ## Variable block
@@ -69,3 +72,5 @@ instance_ip_addr = "172.31.24.95"
 ```
 
 Will be output after `terraform apply` or `terraform output`
+
+Password: SuperSecurePassword

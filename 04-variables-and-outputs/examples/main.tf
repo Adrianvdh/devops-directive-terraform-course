@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "devops-directive-tf-state"
+    bucket         = "devops-directive-terraform-state" # REPLACE WITH YOUR BUCKET NAME
     key            = "04-variables-and-outputs/examples/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-state-locking"
+    region         = "af-south-1"
+    dynamodb_table = "devops-directive-terraform-state"
     encrypt        = true
   }
 
@@ -16,7 +16,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "af-south-1"
 }
 
 locals {
@@ -38,7 +38,7 @@ resource "aws_db_instance" "db_instance" {
   storage_type        = "gp2"
   engine              = "postgres"
   engine_version      = "12"
-  instance_class      = "db.t2.micro"
+  instance_class      = var.db_instance_type
   name                = "mydb"
   username            = var.db_user
   password            = var.db_pass
