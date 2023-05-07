@@ -2,10 +2,10 @@ terraform {
   # Assumes s3 bucket and dynamo DB table already set up
   # See /code/03-basics/aws-backend
   backend "s3" {
-    bucket         = "devops-directive-tf-state"
+    bucket         = "devops-directive-terraform-state" # REPLACE WITH YOUR BUCKET NAME
     key            = "04-variables-and-outputs/web-app/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-state-locking"
+    region         = "af-south-1"
+    dynamodb_table = "devops-directive-terraform-state"
     encrypt        = true
   }
 
@@ -208,7 +208,7 @@ resource "aws_db_instance" "db_instance" {
   storage_type        = "standard"
   engine              = "postgres"
   engine_version      = "12"
-  instance_class      = "db.t2.micro"
+  instance_class      = var.db_instance_type
   name                = var.db_name
   username            = var.db_user
   password            = var.db_pass
