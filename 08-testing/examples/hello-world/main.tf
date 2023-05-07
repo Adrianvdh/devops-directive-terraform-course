@@ -2,9 +2,9 @@ terraform {
   # Assumes s3 bucket and dynamo DB table already set up
   # See /code/03-basics/aws-backend
   backend "s3" {
-    bucket         = "devops-directive-tf-state"
+    bucket         = "devops-directive-terraform-state" # REPLACE WITH YOUR BUCKET NAME
     key            = "08-testing/examples/hello-world/terraform.tfstate"
-    region         = "us-east-1"
+    region         = "af-south-1"
     dynamodb_table = "terraform-state-locking"
     encrypt        = true
   }
@@ -18,7 +18,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "af-south-1"
 }
 
 

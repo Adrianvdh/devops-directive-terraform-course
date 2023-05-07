@@ -3,7 +3,7 @@
 variable "region" {
   description = "Default region for provider"
   type        = string
-  default     = "us-east-1"
+  default     = "af-south-1"
 }
 
 variable "app_name" {
@@ -23,7 +23,7 @@ variable "environment_name" {
 variable "ami" {
   description = "Amazon machine image to use for ec2 instance"
   type        = string
-  default     = "ami-011899242bb902164" # Ubuntu 20.04 LTS // us-east-1
+  default     = "ami-0fa76be462663b856" # Ubuntu 20.04 LTS // af-south-1
 }
 
 variable "instance_type" {
@@ -70,4 +70,9 @@ variable "db_pass" {
   sensitive   = true
 }
 
+variable "db_instance_type" {
+  description = "RDS instance type"
+  type        = string
+  default     = "t2.micro"
+}
 

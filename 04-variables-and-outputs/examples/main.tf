@@ -3,7 +3,7 @@ terraform {
     bucket         = "devops-directive-terraform-state" # REPLACE WITH YOUR BUCKET NAME
     key            = "04-variables-and-outputs/examples/terraform.tfstate"
     region         = "af-south-1"
-    dynamodb_table = "devops-directive-terraform-state"
+    dynamodb_table = "terraform-state-locking"
     encrypt        = true
   }
 
